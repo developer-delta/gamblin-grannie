@@ -1,0 +1,18 @@
+@font-face{
+	font-family: '8bit';
+	src: url('fonts/8-bit-webfont-reg.woff') format('woff');
+	src: url('fonts/8-bit-webfont-bold.woff') format('woff');
+	src: url('fonts/8-bit-webfont-expanded-regular.woff') format('woff');
+	src: url('fonts/8-bit-webfont-expanded-bold.woff') format('woff');
+}
+
+* {
+  font-family: '8bit', monospace;
+}
+
+img {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 150px;
+}
