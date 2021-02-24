@@ -1,3 +1,36 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+	height: 100%;
+	background: #180e06;
+}
+
+*, *:before, *:after {
+	font-family: '8bit', monospace;
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 @font-face{
 	font-family: '8bit';
 	src: url('fonts/8-bit-webfont-reg.woff') format('woff');
@@ -6,13 +39,158 @@
 	src: url('fonts/8-bit-webfont-expanded-bold.woff') format('woff');
 }
 
-* {
-  font-family: '8bit', monospace;
+.hidden {
+	display: none;
 }
 
-img {
+.disabled {
+	pointer-events: none;
+}
+
+body {
+	background-image: url(assets/8-bit-vegas.png);
+	background-size: cover;
+	height: 100vh;
+}
+
+.fork-me-corner {
 	position: absolute;
 	top: 0;
 	right: 0;
 	width: 150px;
+}
+
+main {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+	position: absolute;
+	top: 2rem;
+	font-size: 5rem;
+}
+
+.jackpot {
+	font-size: 5rem;
+	color: #c2a656;
+	background: black;
+	padding: 1rem;
+	position: fixed;
+	top: 10rem;
+}
+
+.slot {
+	position: relative;
+}
+
+.slot .machine {
+	position: relative;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.slot .lever {
+	position: absolute;
+	top: 0;
+}
+
+.slot .lever:active {
+	transform: rotate3d(1, 0, 0, 
+	180deg
+	) translateY(-83%);
+}
+
+.slot .spinning-nums {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 30%;
+	display: flex;
+	justify-content: center;
+	margin-top: 11%;
+}
+
+.slot .spinning-nums p {
+	margin: 0;
+}
+
+.slot .spinning-nums img {
+	width: 100%;
+}
+
+.slot .spinning-nums button:focus {
+	background-color: #c2a656;
+}
+
+.slot .spinning-nums button:active {
+	background-color: #eeefef;
+}
+
+.num-1, .num-2, .num-3 {
+	font-size: 4rem;
+	width: 15%;
+	margin: 2%;
+}
+
+.guess {
+	font-size: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: white;
+	margin: 20px;
+	padding: 20px;
+}
+
+.guess input.guess-num {
+	height: 30px;
+	font-size: 2rem;
+	max-width: 175px;
+	margin-top: 20px;
+	text-align: center;
+	border: 5px solid #c2a656;
+	background: transparent;
+	color: white;
+	padding: 20px;
+}
+
+.spin {
+	font-size: 5rem;
+	padding: 10px;
+	background-color: #c2a656;
+	border: 5px solid #b64d37;
+}
+
+.wallet {
+display: flex;
+align-items: center;
+position: fixed;
+bottom: 0;
+width: 100%;
+height: 150px;
+margin-left: 50px;
+overflow-x: scroll;
+}
+
+.wallet .token {
+	width: 120px;
+}
+
+.wallet .token:not(:first-of-type) {
+	margin-left: -85px;
+}
+
+.wallet .luck {
+	background: #180e06;
+	position: fixed;
+	right: 0;
+	list-style: none;
+	padding: 10px;
+	padding-right: 50px;
+	color: #eeb028;
 }
