@@ -1,9 +1,20 @@
 const wallet = document.querySelector('.wallet');
-
 const STARTING_TOKENS = 10;
 
-let LUCK = 6; // lower is luckier
-const luckyButton = document.querySelector('.luck #lucky');
+
+let luck = document.querySelector('.luck input[checked]').value;
+
+const luckyButtons = document.querySelectorAll('.luck input');
+
+const setLuck = (event) => {
+  luck = event.currentTarget.value;
+  console.log(luck)
+}
+
+for(let i = 0; i < luckyButtons.length; i++) {
+  luckyButtons[i].addEventListener('click', setLuck);
+}
+
 const neutralLuckButton = document.querySelector('.luck #neutral');
 const unLuckyButton = document.querySelector('.luck #unlucky');
 
@@ -20,7 +31,7 @@ const tokens = () => {
 }
 
 const randomNum = () => {
- return Math.floor(Math.random() * LUCK);
+ return Math.floor(Math.random() * luck);
 }
 
 const createToken = (i) => {
@@ -83,10 +94,6 @@ const stopNum = (num) => {
     winToken(15);
   }
 }
-
-unLuckyButton.addEventListener('click', () => LUCK = 10 );
-neutralLuckButton.addEventListener('click', () => LUCK = 6 );
-luckyButton.addEventListener('click', () => LUCK = 3 );
 
 lever.addEventListener('mousedown', spin);
 
