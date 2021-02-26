@@ -1,6 +1,15 @@
 const wallet = document.querySelector('.wallet');
-const STARTING_TOKENS = 10;
 
+/******* HELPER FUNCTIONS ********/
+
+const randomNum = () => {
+  return Math.floor(Math.random() * luck);
+ }
+
+/*********************************/
+
+
+/************* LUCK **************/
 
 let luck = document.querySelector('.luck input[checked]').value;
 
@@ -15,8 +24,8 @@ for(let i = 0; i < luckyButtons.length; i++) {
   luckyButtons[i].addEventListener('click', setLuck);
 }
 
-const neutralLuckButton = document.querySelector('.luck #neutral');
-const unLuckyButton = document.querySelector('.luck #unlucky');
+/***********************************/
+
 
 const slotNums = document.querySelectorAll('.spinning-nums img');
 const slotButtons = document.querySelectorAll('.spinning-nums button');
@@ -24,33 +33,31 @@ const numResults = document.querySelectorAll('.spinning-nums .result');
 const lever = document.querySelector('.lever');
 let finalResult = [];
 
-//talk about why this needs to be a func over a variable
+/************* TOKENS **************/
+
 const tokens = () => {
-  // talk about what the return statement does
   return document.querySelectorAll('.token');
 }
 
-const randomNum = () => {
- return Math.floor(Math.random() * luck);
-}
-
-const createToken = (i) => {
+const createToken = () => {
   const token = document.createElement('img');
   token.src = 'assets/token.png'
-  token.classList += `token token-${i}`;
+  token.classList = 'token';
   return token;
 }
 
 const betToken = () => {
-  document.querySelectorAll('.token')[0].remove();
+  document.querySelector('.token').remove();
 }
 
-const winToken = (x) => {
-  for(let i = 0; i < x; i++) {
-    // do we need the index here?
-    wallet.append(createToken(i));
+const winTokens = (amount) => {
+  for(let i = 0; i < amount; i++) {
+    wallet.append(createToken());
   }
 }
+
+/***********************************/
+
 
 const spin = () => {
 
@@ -91,7 +98,7 @@ const stopNum = (num) => {
 
   if(finalResult.length === 3 && winCheck(finalResult)) {
     document.querySelector('.jackpot').classList.remove('hidden');
-    winToken(15);
+    winTokens(15);
   }
 }
 
@@ -101,4 +108,4 @@ slotButtons[0].addEventListener('click', () => stopNum(0));
 slotButtons[1].addEventListener('click', () => stopNum(1));
 slotButtons[2].addEventListener('click', () => stopNum(2));
 
-winToken(STARTING_TOKENS);
+winTokens(10);
