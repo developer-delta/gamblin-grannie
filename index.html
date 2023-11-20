@@ -1,51 +1,71 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gamblin' Grannie</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
-</head>
-<body>
-  <main>
-    <h1>GAMBLIN' GRANNIE</h1>
-    <h2 class="jackpot hidden">JACKPOT!!!!!</h2>
-    <img class="fork-me-corner" src="assets/fork_me.png" alt="Fork me on GitHub!">
-    <div class="slot">
-      <img class="machine" src="assets/slot_machine.png" alt="8 bit style golden slot machine with three windows for numbers">
-      <img class="lever" src="assets/lever.png" alt="8 bit style lever">
-      <div class="spinning-nums">
-        <button class="num-1 disabled">
-          <img class="hidden" src="assets/spinning_num.gif" alt="8 bit style spinning number">
-          <p class="result hidden"></p>
-        </button>
-        <button class="num-2 disabled">
-          <img class="hidden" src="assets/spinning_num.gif" alt="8 bit style spinning number">
-          <p class="result hidden"></p>
-        </button>
-        <button class="num-3 disabled">
-          <img class="hidden" src="assets/spinning_num.gif" alt="8 bit style spinning number">
-          <p class="result hidden"></p>
-        </button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gamblin' Grannie</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>GAMBLIN' GRANNIE</h1>
+      <h2 class="jackpot hidden">JACKPOT!!!!!</h2>
+      <img
+        class="fork-me-corner"
+        src="assets/fork_me.png"
+        alt="Fork me on GitHub!"
+      />
+      <div class="slot">
+        <img
+          class="machine"
+          src="assets/slot_machine.png"
+          alt="8 bit style golden slot machine with three windows for numbers"
+        />
+        <img class="lever" src="assets/lever.png" alt="8 bit style lever" />
+        <div class="spinning-nums">
+          <button class="num-1 disabled">
+            <img
+              class="hidden"
+              src="assets/spinning_num.gif"
+              alt="8 bit style spinning number"
+            />
+            <p class="result hidden"></p>
+          </button>
+          <button class="num-2 disabled">
+            <img
+              class="hidden"
+              src="assets/spinning_num.gif"
+              alt="8 bit style spinning number"
+            />
+            <p class="result hidden"></p>
+          </button>
+          <button class="num-3 disabled">
+            <img
+              class="hidden"
+              src="assets/spinning_num.gif"
+              alt="8 bit style spinning number"
+            />
+            <p class="result hidden"></p>
+          </button>
+        </div>
       </div>
-    </div>
-    <div class="wallet">
-      <ul class="luck">
-        <li>
-          <input type="radio" name="luck" id="lucky" value="3">
-          <label for="lucky">Lucky</label>
-        </li>
-        <li>
-          <input type="radio" name="luck" id="neutral" value="6" checked>
-          <label for="neutral">Neutral</label>
-        </li>
-        <li>
-          <input type="radio" name="luck" id="unlucky" value="10">
-          <label for="unlucky">Unlucky</label>
-        </li>
-      </ul>
-    </div>
-  </main>
-</body>
+      <div class="wallet">
+        <ul class="luck">
+          <li>
+            <input type="radio" name="luck" id="lucky" value="3" />
+            <label for="lucky">Lucky</label>
+          </li>
+          <li>
+            <input type="radio" name="luck" id="neutral" value="6" checked />
+            <label for="neutral">Neutral</label>
+          </li>
+          <li>
+            <input type="radio" name="luck" id="unlucky" value="10" />
+            <label for="unlucky">Unlucky</label>
+          </li>
+        </ul>
+      </div>
+    </main>
+  </body>
 </html>
